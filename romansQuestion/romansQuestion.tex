@@ -1,9 +1,39 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{bbold}
 \title{Roman's Question}
 \author{James P. Robinson}
 \begin{document}
 \maketitle
 \begin{abstract}
+\noindent
 I owe a debt to my collegue Roman Fresneda-Quiroga who introduced me to this question. It has given me a great deal of pleasre over the last couple of days and I have very much enjoyed proving it.
 \end{abstract}
+Consider the integer equation $$\frac{a^2+b}{b^2+a}=n$$
+There follows a proof that there exists solutions $\forall\ n\in\mathbb{N}$ by concidering 3 distinct cases.
+\begin{section}{$n = 1$}
+This case is trivial simply concider any solution with $a = b$
+\end{section}
+\begin{section}{$n$ is not a perfect square}
+If $(a,b)=c$ then $\exists$ $a',b'$ such that $(a',b')=1$ with $a=a'c$ and $b=b'c$. Thus we are required only to find a solution such that $$\frac{(a'c)^2 + b'c}{(b'c)^2+a'c} = \frac{ca'^2+b'}{cb'^2+a'} = n$$ 
+Which by renaming means we need only find  $$\frac{ca^2+b}{cb^2+a}=n$$ With $(a,b) = 1$ and $c\in\mathbb{N}$
+Thus 
+\begin{eqnarray*}
+  \frac{ca^2+b}{cb^2+a}&=&n\\
+  ca^2+b&=&n(cb^2+a)\\
+  c(a^2-nb^2)&=&an-b\\
+  c&=&\frac{an-b}{a^2-nb^2}
+\end{eqnarray*}
+Thus by Pell's equation we can choose $a$ and $b$ from amongst the continued fractions of $\sqrt{n}$ to yield $$a^2-nb^2=1$$ and thus $$c=an-b$$ Yielding a construction of the equation for all $n$ not a perfect square as is required by Pell's equation.
+\end{section}
+\begin{section}{$n=m^2$}
+From the previous section we have that $$c(a^2-m^2b^2)=am^2-b$$
+and thus $$c(a-mb)=\frac{am^2-b}{a+mb}=m^2-b\frac{m^3+1}{a+mb}$$
+and $$c(a+mb)=\frac{am^2-b}{a-mb}=m^2+b\frac{m^3-1}{a-mb}$$
+\begin{subsection}{$m$ is even}
+  If $m$ is even we can simply let $a-mb=1$ and $a+mb=m^3+1$ which yields
+$$a=\frac{m^3}2+1$$ and $$b=\frac{m^2}2$$
+\end{subsection}
+\end{section}
 \end{document}
