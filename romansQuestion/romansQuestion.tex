@@ -1,17 +1,16 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{bbold}
-\title{Roman's Question}
+\title{The Fresneda-Quiroga Conjecture}
 \author{James P. Robinson}
 \begin{document}
 \maketitle
-\begin{abstract}
-\noindent
-I owe a debt to my collegue Roman Fresneda-Quiroga who introduced me to this question. It has given me a great deal of pleasre over the last couple of days and I have very much enjoyed proving it.
-\end{abstract}
+%\begin{abstract}
+%\noindent
+%I owe a debt to my collegue Roman Fresneda-Quiroga who introduced me to this question. It has given me a great deal of pleasure over the last couple of days and I have very much enjoyed proving it, more so as on two days ago I had convinced myself that the fact that there is no solution in the case $n=19$ with $(a,b)=1$ meant that I had a counter example. A moments hesitation in LIN-Q Pad would have allowed me to see that $a = 54\textrm{, }b=10$ is a valid solution for the case $n=19$.
+%\end{abstract}
 Consider the integer equation $$\frac{a^2+b}{b^2+a}=n$$
-There follows a proof that there exists solutions $\forall\ n\in\mathbb{N}$ by concidering 3 distinct cases.
 \begin{section}{$n = 1$}
 This case is trivial simply concider any solution with $a = b$
 \end{section}
@@ -25,7 +24,7 @@ Thus
   c(a^2-nb^2)&=&an-b\\
   c&=&\frac{an-b}{a^2-nb^2}
 \end{eqnarray*}
-Thus by Pell's equation we can choose $a$ and $b$ from amongst the continued fractions of $\sqrt{n}$ to yield $$a^2-nb^2=1$$ and thus $$c=an-b$$ Yielding a construction of the equation for all $n$ not a perfect square as is required by Pell's equation.
+Thus by Pell's equation we can choose $a$ and $b$ from amongst the continued fractions of $\sqrt{n}$ to yield $$a^2-nb^2=1$$ and thus one can calculate $$c=an-b$$ 
 \end{section}
 \begin{section}{$n=m^2$}
 From the previous section we have that $$c(a^2-m^2b^2)=am^2-b$$
@@ -33,7 +32,11 @@ and thus $$c(a-mb)=\frac{am^2-b}{a+mb}=m^2-b\frac{m^3+1}{a+mb}$$
 and $$c(a+mb)=\frac{am^2-b}{a-mb}=m^2+b\frac{m^3-1}{a-mb}$$
 \begin{subsection}{$m$ is even}
   If $m$ is even we can simply let $a-mb=1$ and $a+mb=m^3+1$ which yields
-$$a=\frac{m^3}2+1$$ and $$b=\frac{m^2}2$$
+$$a=\frac{m^3}2+1\textrm{, }b=\frac{m^2}2\textrm{ and }c = \frac{m^2}2$$
+\end{subsection}
+\begin{subsection}{$m$ is odd}
+  If m is odd the above approach will not yield integer solutions. However if we try sticking with $a-mb = 1$ and change to $a+mb=m^2-m+1$ then we get
+  $$a=\frac{m^2-m+2}2\textrm{, }b=\frac{m-1}2\textrm{ and }c=\frac{m^2+1}2$$
 \end{subsection}
 \end{section}
 \end{document}
