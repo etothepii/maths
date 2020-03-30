@@ -6,3 +6,10 @@ def test_can_step_1():
     expected = {Number(12, 1, 10)}
     result = start.step()
     assert expected == result
+
+
+def test_can_step_2():
+    start = Number(12, 1, 10)
+    expected = {Number(6, 1, 5)}
+    result = start.step()
+    assert expected == result
