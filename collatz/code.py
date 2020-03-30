@@ -7,3 +7,8 @@ class Number:
 
     def step(self):
         pass
+
+    def __repr__(self):
+        if self.denominator == 1:
+            return f"{self.multiplicand} * n + {self.remainder}"
+        return f"({self.multiplicand} * n) / {self.denominator} + {self.remainder}"
