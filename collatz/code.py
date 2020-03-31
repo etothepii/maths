@@ -15,7 +15,11 @@ class Number:
                 Number(self.multiplicand * 3, self.denominator, self.remainder * 3 + 1),
                 Number(self.multiplicand, self.denominator * 2, self.remainder / 2)
             }
-
+        else:
+            return {
+                Number(self.multiplicand * 3, self.denominator, self.remainder * 3 + 1),
+                Number(self.multiplicand, self.denominator * 2, (self.remainder + self.multiplicand) / 2)
+            }
 
     def __repr__(self):
         if self.denominator == 1:
