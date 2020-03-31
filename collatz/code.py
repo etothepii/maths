@@ -60,10 +60,15 @@ class Stage:
         return Stage(set(self.children()))
 
     def children(self):
+        count = 0
         for number in self.numbers:
-            for child in number.step():
+            children = number.step()
+            if len(children) == 0:
+                print(f"Died: {number}")
+            for child in children:
+                count += 1
                 yield child
+        print(f"Size: {count}")
 
     def __repr__(self):
         return "{" + ",".join(n.example for n in self.numbers) + "}"
-
