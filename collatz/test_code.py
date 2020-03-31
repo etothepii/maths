@@ -1,4 +1,4 @@
-from collatz.code import Number, loop
+from collatz.code import Number, Stage
 
 
 def test_can_step_1():
@@ -37,37 +37,37 @@ def test_can_terminate():
 
 
 def test_can_loop_1():
-    start = {Number(4, 1, 3)}
-    expected = {Number(12, 1, 10, 7)}
-    result = loop(start)
-    assert result == expected
+    start = Stage({Number(4, 1, 3)})
+    expected = Stage({Number(12, 1, 10, 7)})
+    result = start.step()
+    assert result.numbers == expected.numbers
 
 
 def test_can_loop_2():
-    start = {
+    start = Stage({
         Number(9, 1, 8, 7)
-    }
-    expected = {
+    })
+    expected = Stage({
         Number(27, 1, 25, 7),
         Number(9, 2, 4, 7)
-    }
-    result = loop(start)
-    assert result == expected
+    })
+    result = start.step()
+    assert result.numbers == expected.numbers
 
 
 def test_can_loop_3():
-    start = {
+    start = Stage({
         Number(27, 1, 25, 7),
         Number(9, 2, 4, 7)
-    }
-    expected = {
+    })
+    expected = Stage({
         Number(9, 4, 2, 7),
         Number(27, 2, 13, 7),
         Number(81, 1, 76, 7),
         Number(27, 2, 26, 7)
-    }
-    result = loop(start)
-    assert result == expected
+    })
+    result = start.step()
+    assert result.numbers == expected.numbers
 
 
 def test_can_get_example_1():

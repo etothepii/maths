@@ -52,10 +52,18 @@ class Number:
                    other.ultimate_parent == self.ultimate_parent
 
 
-def loop(numbers):
-    def process(n):
-        for number in n:
+class Stage:
+    def __init__(self, numbers):
+        self.numbers = numbers
+
+    def step(self):
+        return Stage(set(self.children()))
+
+    def children(self):
+        for number in self.numbers:
             for child in number.step():
                 yield child
-    return set(process(numbers))
+
+    def __repr__(self):
+        return "{" + ",".join(n.example for n in self.numbers) + "}"
 
