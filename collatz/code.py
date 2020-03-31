@@ -48,5 +48,9 @@ class Number:
                    other.ultimate_parent == self.ultimate_parent
 
 
-def loop(number):
-    pass
+def loop(numbers):
+    def process(n):
+        for number in n:
+            for child in number.step():
+                yield child
+    return set(process(numbers))
