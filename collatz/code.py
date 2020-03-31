@@ -32,6 +32,10 @@ class Number:
     def child(self, multiplicand, denominator, remainder):
         return Number(multiplicand, denominator, remainder, self.ultimate_parent)
 
+    @property
+    def example(self):
+        return self.multiplicand + self.remainder
+
     def __repr__(self):
         if self.denominator == 1:
             return f"{self.multiplicand} * n + {self.remainder}"
@@ -54,3 +58,4 @@ def loop(numbers):
             for child in number.step():
                 yield child
     return set(process(numbers))
+

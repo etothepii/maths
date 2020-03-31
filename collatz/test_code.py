@@ -68,3 +68,19 @@ def test_can_loop_3():
     }
     result = loop(start)
     assert result == expected
+
+
+def test_can_get_example_1():
+    assert Number(9, 4, 2, 7).example == 11
+
+
+def test_can_get_example_2():
+    assert Number(27, 2, 13, 7).example == 40
+
+
+def test_can_get_example_3():
+    assert Number(81, 1, 76, 7).example == 157
+
+
+def test_can_get_example_4():
+    assert Number(27, 2, 26, 7).example == 53
