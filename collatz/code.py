@@ -8,6 +8,8 @@ class Number:
     def step(self):
         if self.multiplicand % 2 == 0 and self.remainder % 2 == 0:
             return {Number(self.multiplicand / 2, self.denominator, self.remainder / 2)}
+        if self.multiplicand % 2 == 0:
+            return {Number(self.multiplicand * 3, self.denominator, self.remainder * 3 + 1)}
         pass
 
     def __repr__(self):
