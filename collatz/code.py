@@ -44,4 +44,9 @@ class Number:
         if isinstance(other, Number):
             return other.multiplicand == self.multiplicand and \
                    other.denominator == self.denominator and \
-                   other.remainder == self.remainder
+                   other.remainder == self.remainder and \
+                   other.ultimate_parent == self.ultimate_parent
+
+
+def loop(number):
+    pass
